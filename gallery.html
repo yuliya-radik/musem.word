@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Найвідоміші музеї світу</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Галерея картинок</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about.html">Про сайт</a></li>
+            <li><a href="gallery.html">Галерея картинок</a></li>
+            <li><a href="news.html">Новини</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </ul> 
+    </nav>     
+  
+  <!-- Bootstrap Bundle с Popper (обязателен для работы мобильного меню) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Контент галереї -->
+   <h2 class="mb-4">Галерея</h2>
+
+  <main class="container my-5">
+  </main>
+  <div class="gallery">
+    <!-- Автоматичне створення 20 зображень -->
+    <!-- Замініть на свої фото -->
+  </div>
+  <!-- Модальне вікно -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <img id="modal-img" src="" alt="Збільшене фото">
+        <span class="modal-prev" id="prev">&#10094;</span>
+        <span class="modal-next" id="next">&#10095;</span>
+      </div>
+    </div>
+  
+ <script>
+    // Автоматичне створення 20 зображень
+    const galleryContainer = document.querySelector('.gallery');
+    for (let i = 1; i <= 20; i++) {
+      const img = document.createElement('img');
+      img.src = `images/images${i}.gallery.jpg`;  // Замінити на свої зображення
+      img.alt = `Фото ${i}`;
+      img.dataset.index = i;  // Додаємо індекс для зображення
+      galleryContainer.appendChild(img);
+    }
+  
+    // Модальне вікно
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let currentIndex = 0;
+  
+    // Відкриття зображення
+    galleryContainer.addEventListener('click', function (e) {
+      if (e.target.tagName === 'IMG') {
+        currentIndex = parseInt(e.target.dataset.index) - 1; // Встановлюємо індекс зображення
+        modal.style.display = 'flex';
+        modalImg.src = e.target.src;
+      }
+    });
+  
+    // Закриття модального вікна
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalImg.src = '';
+      }
+    });
+  
+    // Перехід до попереднього зображення
+    prevBtn.addEventListener('click', function (e) {
+      e.stopPropagation(); // Запобігаємо закриттю модального вікна
+      currentIndex = (currentIndex === 0) ? 19 : currentIndex - 1; // Зациклюємо на 20-му зображенні
+      modalImg.src = `images/images${currentIndex-1}.gallery.jpg`; // Завантажуємо нове зображення
+    });
+  
+    // Перехід до наступного зображення
+    nextBtn.addEventListener('click', function (e) {
+      e.stopPropagation(); // Запобігаємо закриттю модального вікна
+      currentIndex = (currentIndex === 19) ? 0 : currentIndex + 1; // Зациклюємо на 1-му зображенні
+      modalImg.src = `images/images${currentIndex+1}.gallery.jpg`; // Завантажуємо нове зображення
+    });
+  </script>
+  
+    <footer>
+        <p>&copy; 2025 Найвідоміші музеї світу</p>
+    </footer>
+  </body>
+  </html>
