@@ -50,7 +50,7 @@
     const galleryContainer = document.querySelector('.gallery');
     for (let i = 1; i <= 20; i++) {
       const img = document.createElement('img');
-      img.src = `images/images${i}.gallery.jpg`;  // Замінити на свої зображення
+      img.src = `images${i}.gallery.jpg`;  // Замінити на свої зображення
       img.alt = `Фото ${i}`;
       img.dataset.index = i;  // Додаємо індекс для зображення
       galleryContainer.appendChild(img);
@@ -84,14 +84,14 @@
     prevBtn.addEventListener('click', function (e) {
       e.stopPropagation(); // Запобігаємо закриттю модального вікна
       currentIndex = (currentIndex === 0) ? 19 : currentIndex - 1; // Зациклюємо на 20-му зображенні
-      modalImg.src = `images/images${currentIndex-1}.gallery.jpg`; // Завантажуємо нове зображення
+      modalImg.src = `images${currentIndex-1}.gallery.jpg`; // Завантажуємо нове зображення
     });
   
     // Перехід до наступного зображення
     nextBtn.addEventListener('click', function (e) {
       e.stopPropagation(); // Запобігаємо закриттю модального вікна
       currentIndex = (currentIndex === 19) ? 0 : currentIndex + 1; // Зациклюємо на 1-му зображенні
-      modalImg.src = `images/images${currentIndex+1}.gallery.jpg`; // Завантажуємо нове зображення
+      modalImg.src = `images${currentIndex+1}.gallery.jpg`; // Завантажуємо нове зображення
     });
   </script>
   
