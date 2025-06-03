@@ -253,6 +253,6 @@ textarea {
     width: 100%;
     height: 100%; /* Висота текстового поля */
     box-sizing: border-box; /* Включає padding і border в ширину */
-    resize: all; /* Дозволяє змінювати висоту */
+    resize: auto; /* Дозволяє змінювати висоту */
 
 }
