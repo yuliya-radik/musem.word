@@ -8,7 +8,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     align-items: center;
     display: flex;    
-    margin-left: 10px;
 } 
 .logo {
     display: block;
