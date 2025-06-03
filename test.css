@@ -9,7 +9,7 @@ header {
 } 
 .logo {
     display: block;
-    margin: 0 auto; /* Центрування */
+    margin-left: 0; /* Лого буде зліва */
     width: 150px;
 }
 
