@@ -191,3 +191,19 @@ main {
 .news-image:hover {
     transform: rotate(3deg); /* Легкий нахил фото при наведенні */
 }
+/* Контейнер з колонками */
+.fcontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Оформлення колонок */
+.fcolumn {
+    background: whitegray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
