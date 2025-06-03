@@ -1,5 +1,6 @@
-function toggleText() {
-    var text = document.getElementById("text");
+
+function toggleText(id) {
+    var text = document.getElementById(id);
     if (text.style.display === "none") {
         text.style.display = "block"; // Показати текст
     } else {
