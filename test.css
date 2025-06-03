@@ -202,7 +202,7 @@ main {
     grid-template-columns: repeat(3, 1fr); /* Три колонки */
     gap: 20px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 4px auto;
 }
 
 /* Оформлення колонок */
