@@ -236,6 +236,13 @@ footer {
     flex-wrap: wrap;
 }
 
-    card-text {
+card-text {
     transition: all 0.3s ease-in-out;
+}
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Включає padding і border в ширину */
 }
