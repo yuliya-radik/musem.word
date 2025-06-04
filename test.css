@@ -54,7 +54,7 @@ nav ul li a {
 /* Контейнер з колонками */
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Три колонки */
     gap: 20px;
     max-width: 1200px;
     margin: 40px auto;
